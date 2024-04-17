@@ -13,7 +13,7 @@ def test_proxy(proxy):
     }
 
     try:
-        response = requests.get('https://api.join.pokemon.com/', proxies=proxies, timeout=5)
+        response = requests.get('https://api.join.pokemon.com/', proxies=proxies, timeout=120)
         if 'Missing Authentication Token' in response.text:
             count_working += 1
             return True
