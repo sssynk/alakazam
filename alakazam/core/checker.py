@@ -27,8 +27,8 @@ def _test_proxy_and_save(proxy, outfile):
         with open(outfile, 'a') as out:
             out.write(proxy + '\n')
 
-def test_proxy_file(file, outfile):
-    pool = ThreadPool(300)
+def test_proxy_file(file, outfile, threads=25):
+    pool = ThreadPool(threads)
     with open(file, 'r') as f:
         proxies = f.readlines()
         for proxy in tqdm(proxies, desc="Testing Proxies"):
