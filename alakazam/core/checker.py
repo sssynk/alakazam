@@ -8,8 +8,8 @@ count_working = 0
 def test_proxy(proxy):
     global count_working
     proxies = {
-        'http': f'http://{proxy}',
-        'https': f'http://{proxy}'
+        'http': proxy,
+        'https': proxy
     }
 
     try:
