@@ -13,12 +13,12 @@ def test_proxy(proxy):
     }
 
     try:
-        response = requests.get('https://join.pokemon.com/', proxies=proxies, timeout=5)
-        if 'edet=16' in response.text:
-            return False
-        else:
+        response = requests.get('https://api.join.pokemon.com/', proxies=proxies, timeout=5)
+        if 'Missing Authentication Token' in response.text:
             count_working += 1
             return True
+        else:
+            return False
     except:
         return False
 
